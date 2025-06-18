@@ -37,6 +37,7 @@ def get_linked_pages(html):
     for link in links:
         # Access the URL in match group 0.
         this_url = link[0]
+        this_url = this_url.split("#")[0]
         page = urljoin(dmn, this_url)
 
         # Check if the domain is in the current URL
