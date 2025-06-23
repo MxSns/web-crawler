@@ -18,6 +18,11 @@ to_crawl = [dmn]
 crawled = []
 external = []
 
+title = "\t\t             _       ___                 _         \n" +\
+        "\t\t __ __ _____| |__   / __|_ _ __ ___ __ _| |___ _ _ \n" +\
+        "\t\t \ V  V / -_) '_ \ | (__| '_/ _` \ V  V / / -_) '_|\n" +\
+        "\t\t  \_/\_/\___|_.__/  \___|_| \__,_|\_/\_/|_\___|_|  \n"
+
 # Request a webpage and return the html text
 def fetch_page(url):
     
@@ -58,7 +63,7 @@ def get_linked_pages(html):
              external.append(page)
         
 print("=" * width + "\n")
-console.print("WEB-CRAWLER", justify="center")
+print(title)
 print("\n" + "=" * width )
 print(f"\nEnumerating links form {args.domain} ...\n")
 
@@ -70,6 +75,6 @@ while to_crawl:
 
 print("\nCrawled URLs:\n" + "\n".join(crawled))
 if not external:
-    print(f"No external links were found in {dmn}")
+    console.print(f"\nNo external links were found in {dmn}", style="red")
 else:
     print("\nExternal URLs:\n" + "\n".join(external))
