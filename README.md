@@ -10,7 +10,7 @@ This script uses 'requests' to fetch wab pages and 're' for links extraction. It
 git clone https://github.com/MxSns/web-crawler.git
 
 2. Install dependencies
-pip install requests
+pip3 install -r requirements.txt
 
 ## Usage
 Run the script with a domain argument
